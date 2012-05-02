@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block main %}
+<table class="table table-striped table-bordered">
+<tr><td>{{ form.title }}</td></tr>
+<tr>
+<td>Status</td><td>Responsible</td><td>Description</td></tr>
+    {% for job in jobs %}
+        <tr>
+          <td><a href="joblist/{{ job.id }}"><b>{{job.status}}</b></a></td>
+        <td>{{ job.responsible }}</td>
+            <td>{{ job.description }}</td>
+    {% endfor %}
+</table>
+
+{% endblock %}

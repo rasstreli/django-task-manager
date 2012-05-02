@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block main %}
+
+    <h1> UIIII!!!</h1>
+    {{ user.type }}
+    <form method="POST">
+        {% csrf_token %}
+        <label for="username">Username</label>
+         {{ form.username}}
+        <label for="password">Password</label>
+        {{ form.password }}
+        <label for="postal">Postal Code</label>
+        {{ form.postal }}
+        <label for="phone">Phone Number</label>
+        {{ form.phone }}
+        <label for="emergency_contact">Emergency Contact</label>
+        {{ form.emergency_contact }}
+        <label for="country">Country</label>
+        {{ form.country }}
+        <label for="last_login">Last Login</label>
+        {{ form.last_login }}
+        <label  for="date_joined">Date Joined</label>
+        {{ form.date_joined }}
+    <input type="submit">
+    </form>
+{% endblock %}

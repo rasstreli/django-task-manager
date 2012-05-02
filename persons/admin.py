@@ -1,0 +1,5 @@
+__author__ = 'pavel'
+from django.contrib import admin
+from persons.models import Person
+
+admin.site.register(Person)

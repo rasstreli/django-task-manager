@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block main %}
+    <table class="table table-bordered">
+    <tr>{{ form.as_p }}</tr>
+    <tr><td><u><b>Description</b></u></td><td><u><b>Status</b></u></td><td><u><b>Responsible</b></u></td></tr>
+    {%  for job in job %}
+        <tr>
+           <td>{{ job.description }}</td>
+            <td>{{ job.status }}</td>
+            <td>{{ job.responsible }}</td></tr>
+    {% endfor %}
+    </table>
+
+{% endblock %}
