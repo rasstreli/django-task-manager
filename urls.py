@@ -1,9 +1,7 @@
 from django.conf import settings
 from django.conf.urls.static import static
 from django.conf.urls.defaults import patterns, include, url
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from persons.views import create_account, index
-from notes.views import create_job, job_list, job
+from persons.views import index
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
@@ -17,7 +15,7 @@ urlpatterns = patterns(
 
     # Uncomment the admin/doc line below to enable admin documentation:
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-    url(r'^test',create_account, name='create'),
+    url(r'^person/',include('persons.urls'), name='create'),
     url(r'$^',index, name='index'),
     url(r'^jobs/',include('notes.urls')),
     # Uncomment the next line to enable the admin:
