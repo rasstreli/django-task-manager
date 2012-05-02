@@ -2,14 +2,11 @@
 from datetime import datetime
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
-from django.contrib.auth import authenticate
 from django.shortcuts import render_to_response, RequestContext
-from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login
-from persons.models import Person
 from persons.forms import PersonForm, LoginForm
 def create_account(request):
-    template = "create_account.html"
+    template = "persons/create_account.html"
     form = PersonForm(initial={'date_joined':datetime.now()})
     if request.method == 'POST':
         form = PersonForm(request.POST)
